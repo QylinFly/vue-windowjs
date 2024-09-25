@@ -5,6 +5,8 @@ import { WindowStyle } from "../style";
 import { ZElement } from "../z_element";
 export declare class WindowType extends Vue {
     isOpen: boolean;
+    isMiniSize: boolean;
+    miniButton: boolean;
     title: string;
     closeButton: boolean;
     resizable: boolean;
@@ -19,6 +21,7 @@ export declare class WindowType extends Vue {
     draggableHelper?: DraggableHelper;
     resizableHelper?: ResizableHelper;
     zElement: ZElement;
+    winHeight?: number;
     mounted(): void;
     beforeDestroy(): void;
     windowElement(): HTMLElement;
@@ -809,6 +812,7 @@ export declare class WindowType extends Vue {
     };
     onResizableChange(resizable: boolean): void;
     private openCount;
+    onIsMiniSizeChange(isMiniSize: boolean): void;
     onIsOpenChange(isOpen: boolean): void;
     onZGroupChange(): void;
     fixPosition(): void;
@@ -830,6 +834,7 @@ export declare class WindowType extends Vue {
     private onWindowMove;
     private setInitialPosition;
     closeButtonClick(): void;
+    miniButtonClick(): void;
 }
 export declare class WindowResizeEvent {
     readonly width: number;

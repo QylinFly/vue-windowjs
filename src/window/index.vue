@@ -11,8 +11,11 @@
         <template v-if="closeButton">
           <my-button @click="closeButtonClick">&times;</my-button>
         </template>
+        <template v-if="miniButton">
+          <my-button @click="miniButtonClick">&#8718;</my-button>
+        </template>
       </div>
-      <div class="content" :style="styleContent" ref="content">
+      <div v-show="!isMiniSize"  class="content" :style="styleContent" ref="content">
         <slot />
       </div>
     </div>

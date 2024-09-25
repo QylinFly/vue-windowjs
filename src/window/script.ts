@@ -25,6 +25,12 @@ export class WindowType extends Vue {
   @Prop({ type: Boolean, default: true })
   isOpen!: boolean
 
+  @Prop({ type: Boolean, default: false })
+  isMiniSize!: boolean
+
+  @Prop({ type: Boolean, default: false })
+  miniButton!: boolean
+
   @Prop({ type: String, default: '' })
   title!: string
 
@@ -61,12 +67,15 @@ export class WindowType extends Vue {
   resizableHelper?: ResizableHelper
 
   zElement!: ZElement
+  winHeight?:number
 
   mounted() {
     instances.push(this)
     this.zElement = new ZElement(this.zGroup, zIndex => this.zIndex = `${zIndex}`)
     this.isOpen && this.onIsOpenChange(true)
+    this.isMiniSize && this.onIsMiniSizeChange(false)
     windows.add(this)
+    this.winHeight = -1
   }
 
   beforeDestroy() {
@@ -124,6 +133,13 @@ export class WindowType extends Vue {
   }
 
   private openCount = 0
+
+  @Watch('isMiniSize')
+  onIsMiniSizeChange(isMiniSize: boolean) {
+    if (isMiniSize) {
+    }
+    console.log('isMiniSize', isMiniSize)
+  }
 
   @Watch('isOpen')
   onIsOpenChange(isOpen: boolean) {
@@ -330,6 +346,27 @@ export class WindowType extends Vue {
   closeButtonClick() {
     this.$emit('closebuttonclick')
     this.$emit('update:isOpen', false)
+  }
+  miniButtonClick() {
+    this.$emit('minibuttonclick')
+    this.$emit('update:isMiniSize', !this.isMiniSize)
+
+    this.$nextTick(() => {
+      if(this.isMiniSize){
+        const w = this.windowElement()
+        const t = this.titlebarElement()
+        const c = this.contentElement()
+        this.winHeight = contentSize(t).height+contentSize(c).height
+        w.style.height = `37px`
+        this.$emit('update:height', 37)
+      }else{
+        const w = this.windowElement()
+        w.style.height = this.winHeight+'px'
+        this.$emit('update:height', this.winHeight)
+        this.onHeightChange((this.winHeight?this.winHeight:100) - contentSize(this.titlebarElement()).height)
+      }
+    })
+
   }
 }
 

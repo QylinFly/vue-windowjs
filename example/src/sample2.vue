@@ -1,7 +1,8 @@
 <template>
   <windowjs-style-metal>
 
-    <windowjs title="Window 1" :closeButton="true" :isOpen.sync="isOpen">
+    <windowjs title="Window 1" :resizable="true" :isMiniSize.sync="isMiniSize"
+    :miniButton="true" :closeButton="true" :isOpen.sync="isOpen">
       Parameters:
       <fieldset>
         <legend>&alpha;</legend>
@@ -24,6 +25,7 @@ export default <any>{
   data() {
     return {
       isOpen: true,
+      isMiniSize: false,
     }
   },
 }
