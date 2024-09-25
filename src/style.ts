@@ -14,7 +14,7 @@ export interface WindowStyle {
 }
 
 
-export const WINDOW_STYLE_KEY = '@hscmap/vue-window/windowStyle'
+export const WINDOW_STYLE_KEY = 'vue-windowjs/windowStyle'
 
 
 export function StyleFactory(windowStyle: WindowStyle): vue.ComponentOptions<Vue> {

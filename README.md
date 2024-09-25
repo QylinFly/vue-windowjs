@@ -27,7 +27,7 @@ This package is an implementation of window UI for PC environment as a Vue Compo
 # Usage
 ## Install
 ```sh
-npm install --save @hscmap/vue-window
+npm install --save vue-windowjs
 ```
 
 ## Setup
@@ -35,7 +35,7 @@ npm install --save @hscmap/vue-window
 ### ES6 / TypeScript
 ```typescript
 import Vue from 'vue'
-import * as VueWindow from '@hscmap/vue-window'
+import * as VueWindow from 'vue-windowjs'
 
 Vue.use(VueWindow)
 ```
@@ -43,14 +43,14 @@ Vue.use(VueWindow)
 ### CommonJS
 ```javascript
 var Vue = require('vue')
-Vue.use(require('@hscmap/vue-window'))
+Vue.use(require('vue-windowjs'))
 ```
 
 # Example
 ```html
 <template>
-    <hsc-window-style-metal>
-        <hsc-window title="Window 1" >
+    <windowjs-style-metal>
+        <windowjs title="Window 1" >
             Parameters:
             <fieldset>
                 <legend>&alpha;</legend>
@@ -60,8 +60,8 @@ Vue.use(require('@hscmap/vue-window'))
                 <legend>&beta;</legend>
                 <input type="range" />
             </fieldset>
-        </hsc-window>
-    </hsc-window-style-metal>
+        </windowjs>
+    </windowjs-style-metal>
 </template>
 ```
 

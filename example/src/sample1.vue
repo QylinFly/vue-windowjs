@@ -1,7 +1,7 @@
 <template>
-  <hsc-window-style-metal>
+  <windowjs-style-metal>
 
-    <hsc-window title="Window 1">
+    <windowjs title="Window 1">
       Parameters:
       <fieldset>
         <legend>&alpha;</legend>
@@ -11,9 +11,9 @@
         <legend>&beta;</legend>
         <input type="range" />
       </fieldset>
-    </hsc-window>
+    </windowjs>
 
-    <hsc-window title="Window 2">
+    <windowjs title="Window 2">
       Parameters:
       <fieldset>
         <legend>&gamma;</legend>
@@ -23,7 +23,7 @@
         <legend>&delta;</legend>
         <input type="range" />
       </fieldset>
-    </hsc-window>
+    </windowjs>
 
-  </hsc-window-style-metal>
+  </windowjs-style-metal>
 </template>

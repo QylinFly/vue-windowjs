@@ -12,8 +12,8 @@
       </hsc-menu-bar>
     </hsc-menu-style-metal>
 
-    <hsc-window-style-metal style="position: fixed; z-index: 1">
-      <hsc-window v-for="w of numberWindows" :key="w.id" :title="w.label" :closeButton="true" :isOpen.sync="w.isOpen">
+    <windowjs-style-metal style="position: fixed; z-index: 1">
+      <windowjs v-for="w of numberWindows" :key="w.id" :title="w.label" :closeButton="true" :isOpen.sync="w.isOpen">
         <table>
           <tr>
             <th>N</th>
@@ -30,8 +30,8 @@
             <td v-html="Math.pow(w.n, 3)"></td>
           </tr>
         </table>
-      </hsc-window>
-    </hsc-window-style-metal>
+      </windowjs>
+    </windowjs-style-metal>
   </div>
 </template>
 
