@@ -1,11 +1,14 @@
 {
     "compilerOptions": {
+        // "module": "commonjs",
+        // "declaration": true,
         "allowSyntheticDefaultImports": true,
         "experimentalDecorators": true,
         "strict": true,
         "target": "es5",
         "importHelpers": true,
         "noUnusedLocals": true,
+        // "outDir": "./lib/types",
         "lib": [
             "dom",
             "es5",
