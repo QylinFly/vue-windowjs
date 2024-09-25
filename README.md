@@ -27,7 +27,8 @@ This package is an implementation of window UI for PC environment as a Vue Compo
 # Usage
 ## Install
 ```sh
-npm install --save vue-windowjs
+npm install --save @hscmap/vue-window
+npm i https://github.com/QylinFly/vue-windowjs.git#master
 ```
 
 ## Setup
