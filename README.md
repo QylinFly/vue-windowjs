@@ -2,6 +2,8 @@
 
 😣 This library is not compatible with Vue3! 😣
 
+copy from https://github.com/michitaro/vue-window
+
 ## Introduction
 Recent web applications are mainly for mobile environments. Therefore window UI is no longer mainstream.
 However, window UI is still useful for professional web applications for PC environments.
